@@ -1,0 +1,3 @@
+const Decorator = () => {
+    this.stock = [];
+}
