@@ -48,4 +48,15 @@ describe('Decorator', () => {
         const actual = room.painted;
         assert.strictEqual(actual, true);
     })
+
+    it('can reduce the amount of paint in a paint can after painting', () => {
+        let paintCan1 = new PaintCan(8);
+        let paintCan2 = new PaintCan(8);
+        decorator.addCanOfPaint(paintCan1);
+        decorator.addCanOfPaint(paintCan2);
+        decorator.decreasePaintStockAfterPainting(room);
+        const actual = decorator.calculateTotalLitres();
+        assert.strictEqual(actual, 6);
+
+    })
 })

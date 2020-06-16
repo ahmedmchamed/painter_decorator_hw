@@ -2,11 +2,11 @@ const PaintCan = function (numberOfLitres) {
     this.numberOfLitres = numberOfLitres;
 }
 
-PaintCan.prototype.checkIfEmpty = () => {
+PaintCan.prototype.checkIfEmpty = function () {
     return this.numberOfLitres === 0;
 }
 
-PaintCan.prototype.emptyCan = () => {
+PaintCan.prototype.emptyCan = function () {
     this.numberOfLitres = 0;
 }
 

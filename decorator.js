@@ -18,14 +18,23 @@ Decorator.prototype.calculateTotalLitres = function () {
 
 Decorator.prototype.checkIfThereIsEnoughPaint = function (room) {
     const totalLitresOfPaint = this.calculateTotalLitres();
-    return totalLitresOfPaint > room.area;
+    return totalLitresOfPaint >= room.area;
 }
 
 Decorator.prototype.paintRoomIfEnoughStock = function (room) {
     if (this.checkIfThereIsEnoughPaint(room) === true) {
         room.paintRoom(true);
     }
-    // return this.checkIfThereIsEnoughPaint(room);
+}
+
+Decorator.prototype.decreasePaintStockAfterPainting = function (room) {
+    if (this.checkIfThereIsEnoughPaint(room) !== true) {
+        return;
+    }
+
+    for (const paintcan of this.stock) {
+        paintcan.numberOfLitres -= room.area
+    }
 }
 
 
