@@ -1,4 +1,4 @@
-const Decorator = () => {
+const Decorator = function () {
     this.stock = [];
 }
 

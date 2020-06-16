@@ -1,4 +1,4 @@
-const PaintCan = (numberOfLitres) => {
+const PaintCan = function (numberOfLitres) {
     this.numberOfLitres = numberOfLitres;
 }
 
