@@ -40,4 +40,12 @@ describe('Decorator', () => {
         const actual = decorator.checkIfThereIsEnoughPaint(room);
         assert.strictEqual(actual, true);
     })
+
+    it('can paint the room if there is enough stock', () => {
+        decorator.addCanOfPaint(paintCan1);
+        decorator.addCanOfPaint(paintCan2);
+        decorator.paintRoomIfEnoughStock(room);
+        const actual = room.painted;
+        assert.strictEqual(actual, true);
+    })
 })

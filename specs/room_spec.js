@@ -14,6 +14,6 @@ describe('Room', () => {
 
     it('should be painted', () => {
         room.paintRoom(true)
-        assert.strictEqual(room.painted, false)
+        assert.strictEqual(room.painted, true)
     })
 })

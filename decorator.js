@@ -22,9 +22,10 @@ Decorator.prototype.checkIfThereIsEnoughPaint = function (room) {
 }
 
 Decorator.prototype.paintRoomIfEnoughStock = function (room) {
-    if (this.checkIfThereIsEnoughPaint === true) {
+    if (this.checkIfThereIsEnoughPaint(room) === true) {
         room.paintRoom(true);
     }
+    // return this.checkIfThereIsEnoughPaint(room);
 }
 
 
