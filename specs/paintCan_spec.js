@@ -1,10 +1,21 @@
 const assert = require('assert')
-const Room = require('../paintCan.js')
+const PaintCan = require('../paintCan.js')
 
 describe('Paint Can', () => {
     let paintCan;
 
     beforeEach(() => {
-        paintCan = new PaintCan();
+        paintCan = new PaintCan(5);
+    })
+
+    it('can check if it is empty', () => {
+        const actual = paintCan.checkIfEmpty()
+        assert.strictEqual(actual, false)
+    })
+
+    it('can empty paint can', () => {
+        paintCan.emptyCan();
+        const actual = paintCan.checkIfEmpty()
+        assert.strictEqual(actual, true)
     })
 })

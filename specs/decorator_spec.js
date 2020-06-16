@@ -1,10 +1,16 @@
 const assert = require('assert')
-const Room = require('../decorator.js')
+const Decorator = require('../decorator.js')
+const PaintCan = require('../paintCan.js')
+const Room = require('../room.js')
 
 describe('Decorator', () => {
-    let decorator;
+    let decorator; 
+    let paintCan;
+    let room 
 
     beforeEach(() => {
         decorator = new Decorator();
+        paintCan = new PaintCan(5);
+        room = = new Room(5);
     })
 })
