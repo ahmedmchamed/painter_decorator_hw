@@ -37,6 +37,17 @@ Decorator.prototype.decreasePaintStockAfterPainting = function (room) {
     }
 }
 
-
+Decorator.prototype.removeEmptyPaintCans = function () {
+    // for (let paintcan of this.stock) {
+    //     if (paintcan.checkIfEmpty() === true) {
+    //         paintcan = null;
+    //     }
+    // }
+    for (let i = 0; i < this.stock.length; i++) {
+        if (this.stock[i].checkIfEmpty() === true) {
+            this.stock[i] = null;
+        }
+    }
+}
 
 module.exports = Decorator;

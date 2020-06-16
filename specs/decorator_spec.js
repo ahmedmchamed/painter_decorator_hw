@@ -57,6 +57,13 @@ describe('Decorator', () => {
         decorator.decreasePaintStockAfterPainting(room);
         const actual = decorator.calculateTotalLitres();
         assert.strictEqual(actual, 6);
+    })
 
+    it('should remove empty paint cans from stock', () => {
+        decorator.addCanOfPaint(paintCan1);
+        decorator.addCanOfPaint(paintCan2);
+        decorator.decreasePaintStockAfterPainting(room);
+        decorator.removeEmptyPaintCans();
+        assert.deepStrictEqual(decorator.stock, [null, null])
     })
 })
