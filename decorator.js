@@ -1,5 +1,3 @@
-const Room = require("./room");
-
 const Decorator = function () {
     this.stock = [];
 }
