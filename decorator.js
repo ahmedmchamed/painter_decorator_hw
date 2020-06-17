@@ -26,7 +26,7 @@ Decorator.prototype.paintRoomIfEnoughStock = function (room) {
 }
 
 Decorator.prototype.decreasePaintStockAfterPainting = function (room) {
-    if (this.checkIfThereIsEnoughPaint(room) !== true) {
+    if (!this.checkIfThereIsEnoughPaint(room)) {
         return;
     }
 
@@ -37,8 +37,8 @@ Decorator.prototype.decreasePaintStockAfterPainting = function (room) {
 
 Decorator.prototype.removeEmptyPaintCans = function () {
     // for (let paintcan of this.stock) {
-    //     if (paintcan.checkIfEmpty() === true) {
-    //         paintcan = null;
+    //     if (paintcan.checkIfEmpty() === true) { the scope of paintcan won't affect the array stock itself.
+    //         paintcan = null; which is why having *direct* access to elements as below works.
     //     }
     // }
     for (let i = 0; i < this.stock.length; i++) {
